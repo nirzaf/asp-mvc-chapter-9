@@ -1,0 +1,18 @@
+﻿@{
+    ViewBag.Title = "Home Page";    
+}
+
+
+<div class="row">
+    <div class="col-md-6 margin-top-20">
+        <a href="@Url.Action("Withdrawal", "Transaction", new { checkingAccountId = ViewBag.CheckingAccountId })" class="btn btn-primary btn-large btn-block"><span class="glyphicon glyphicon-circle-arrow-down"></span> Withdrawal</a>
+        <a href="@Url.Action("QuickCash", "Transaction", new { checkingAccountId = ViewBag.CheckingAccountId, amount = 100 })" class="btn btn-primary btn-large btn-block"><span class="glyphicon glyphicon-flash"></span> Quick Cash $100</a>
+        <a href="@Url.Action("Details", "CheckingAccount")" class="btn btn-primary btn-large btn-block"><span class="glyphicon glyphicon-question-sign"></span> Balance Inquiry</a>
+    </div>
+    <div class="col-md-6 margin-top-20">
+        <a href="@Url.Action("Statement", "CheckingAccount", new { id = ViewBag.CheckingAccountId })" class="btn btn-primary btn-large btn-block"><span class="glyphicon glyphicon-print"></span> Print Statement</a>
+        <a href="@Url.Action("Transfer", "Transaction", new { checkingAccountId = ViewBag.CheckingAccountId })" class="btn btn-primary btn-large btn-block"><span class="glyphicon glyphicon-transfer"></span> Transfer Funds</a>
+        <a href="@Url.Action("Deposit", "Transaction", new {checkingAccountId = ViewBag.CheckingAccountId})" class="btn btn-primary btn-large btn-block"><span class="glyphicon glyphicon-circle-arrow-up"></span> Deposit</a>
+    </div>
+</div>
+@ViewBag.Pin
